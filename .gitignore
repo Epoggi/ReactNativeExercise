@@ -3,6 +3,8 @@ config
 /Exercises/config
 .Exercises/config
 
+private/**/*
+
 node_modules/**/*
 .expo/*
 npm-debug.*
