@@ -1,1 +1,2 @@
-test; 2; 3; 4; 5
+const api_key = '';
+export {api_key};
