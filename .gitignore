@@ -1,5 +1,5 @@
 # My Config file for private information
-./exercises/config.js
+./Exercises/config.js
 
 node_modules/**/*
 .expo/*
