@@ -6,6 +6,8 @@ export default function Home({navigation}) {
   return (
     <View style={styles.mainContainer}>
         <View style={styles.buttonList}>
+        <Button title="Maps103" onPress={()=> navigation.navigate('Maps103')}/>
+        {listSeparator()}  
         <Button title="Maps101" onPress={()=> navigation.navigate('Maps101')}/>
         {listSeparator()}   
         <Button title="Coin Exchange" onPress={()=> navigation.navigate('CoinEx')}/>

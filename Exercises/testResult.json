@@ -1,0 +1,64 @@
+{
+    "results": [
+        {
+            "address_components": [
+                {
+                    "long_name": "Kurkiaurankatu",
+                    "short_name": "Kurkiaurankatu",
+                    "types": [
+                        "route"
+                    ]
+                },
+                {
+                    "long_name": "Järvenpää",
+                    "short_name": "Järvenpää",
+                    "types": [
+                        "administrative_area_level_3",
+                        "political"
+                    ]
+                },
+                {
+                    "long_name": "Suomi",
+                    "short_name": "FI",
+                    "types": [
+                        "country",
+                        "political"
+                    ]
+                }
+            ],
+            "formatted_address": "Kurkiaurankatu, Järvenpää, Suomi",
+            "geometry": {
+                "bounds": {
+                    "northeast": {
+                        "lat": 60.4560188,
+                        "lng": 25.1012698
+                    },
+                    "southwest": {
+                        "lat": 60.4541473,
+                        "lng": 25.0908958
+                    }
+                },
+                "location": {
+                    "lat": 60.45453929999999,
+                    "lng": 25.0956946
+                },
+                "location_type": "GEOMETRIC_CENTER",
+                "viewport": {
+                    "northeast": {
+                        "lat": 60.45643203029151,
+                        "lng": 25.1012698
+                    },
+                    "southwest": {
+                        "lat": 60.4537340697085,
+                        "lng": 25.0908958
+                    }
+                }
+            },
+            "place_id": "ChIJkT6vEHUAjkYRdBSZyTaV8Ag",
+            "types": [
+                "route"
+            ]
+        }
+    ],
+        "status": "OK"
+}
