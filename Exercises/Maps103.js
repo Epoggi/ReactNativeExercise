@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import { Button, StyleSheet, View, TextInput, Alert } from 'react-native';
 import MapView, { Marker } from 'react-native-maps';
-import {api_key} from './config.js';
+import {api_key} from '../private/config.js';
 import * as Location from 'expo-location';
 export default function Maps101() {
   const [region, setRegion] = useState({
