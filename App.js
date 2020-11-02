@@ -10,6 +10,13 @@ import Calculator from './Exercises/Calculator'
 import CalculatorHistory from './Exercises/CalculatorHistory'
 import Maps101 from './Exercises/Maps101'
 import Maps103 from './Exercises/Maps103'
+import ShoppingListV2 from './Exercises/ShoppingListV2'
+import Contacts from './Exercises/Contacts'
+import Text_to_Speech from './Exercises/Text_to_Speech'
+import ShoppingElements from './Exercises/ShoppingElements'
+import TestField from './Exercises/TestField'
+import MyPlaces from './Exercises/MyPlaces'
+import MyMap from './Exercises/MyMap'
 
 export default function App() {
 
@@ -19,6 +26,12 @@ const Stack = createStackNavigator();
    <NavigationContainer>
      <Stack.Navigator>
        <Stack.Screen name="Home" component={Home}/>
+       <Stack.Screen name="MyPlaces" component={MyPlaces}/>
+       <Stack.Screen name="MyMap" component={MyMap}/>
+       <Stack.Screen name="ShoppingElements" component={ShoppingElements}/>
+       <Stack.Screen name="Text to Speech" component={Text_to_Speech}/>
+       <Stack.Screen name="Contacts" component={Contacts}/>
+       <Stack.Screen name="ShoppingListV2" component={ShoppingListV2}/>
        <Stack.Screen name="Maps101" component={Maps101}/>
        <Stack.Screen name="Maps103" component={Maps103}/>
        <Stack.Screen name="CoinEx" component={CoinEx}/>
@@ -26,6 +39,7 @@ const Stack = createStackNavigator();
        <Stack.Screen name="Jobs" component={Jobs}/>
        <Stack.Screen name="Calculator" component={Calculator}/>
        <Stack.Screen name="CalculatorHistory" component={CalculatorHistory}/>
+       <Stack.Screen name="TestField" component={TestField}/>
      </Stack.Navigator>
    </NavigationContainer>
   );

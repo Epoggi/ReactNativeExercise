@@ -6,6 +6,16 @@ export default function Home({navigation}) {
   return (
     <View style={styles.mainContainer}>
         <View style={styles.buttonList}>
+        <Button title="MyPlaces" onPress={()=> navigation.navigate('MyPlaces')}/>
+        {listSeparator()}
+        <Button title="ShoppingElements" onPress={()=> navigation.navigate('ShoppingElements')}/>
+        {listSeparator()} 
+        <Button title="Text to Speech" onPress={()=> navigation.navigate('Text to Speech')}/>
+        {listSeparator()} 
+        <Button title="Contacts" onPress={()=> navigation.navigate('Contacts')}/>
+        {listSeparator()} 
+        <Button title="ShoppingList" onPress={()=> navigation.navigate('ShoppingListV2')}/>
+        {listSeparator()}  
         <Button title="Maps103" onPress={()=> navigation.navigate('Maps103')}/>
         {listSeparator()}  
         <Button title="Maps101" onPress={()=> navigation.navigate('Maps101')}/>
@@ -17,6 +27,8 @@ export default function Home({navigation}) {
         <Button title="Calculator" onPress={()=> navigation.navigate('Calculator')}/>
         {listSeparator()}
         <Button title="Jobs" onPress={()=> navigation.navigate('Jobs')}/>
+        {listSeparator()}
+        <Button title="TestField" onPress={()=> navigation.navigate('TestField')}/>
         </View>
     </View>
   );
