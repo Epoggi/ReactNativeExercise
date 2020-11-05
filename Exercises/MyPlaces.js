@@ -5,26 +5,34 @@ import { Input, Button, ListItem, Icon } from 'react-native-elements';
 
 
 export default function MyPlaces({ navigation }) {
-    const [maPlace, setMaPlace] = useState([]);
+    const [maPlace, setMaPlace] = useState([{id: 1, address: 'Tatti 17 Helsinki'}, {id: 2, address: 'Ratapihantie 13 Pasila'}]);
     const [userInput, setUserInput] = useState('');
+    const [addressId, setAddressId] = useState (3);
 
     const addPlace = () => {
-        setMaPlace([userInput, ...maPlace])
+        setMaPlace([{id: addressId, address: userInput}, ...maPlace])
+        setAddressId(addressId + 1)
+    }
+    const handleRemove = (id) => {
+        const newList = maPlace.filter((item) => item.id !== id);
+        setMaPlace(newList);
     }
 //ListItem onPress?
+//onLongPress delete(item.index)
     const renderItem = ({ item }) => (
         <ListItem bottomDivider >
             <ListItem.Content style={{ flexDirection: 'row', justifyContent:'space-between' }}>
-                <ListItem.Title>{item}</ListItem.Title>
+                <ListItem.Title>{item.address}</ListItem.Title>
                 <Button title="show on map" iconRight 
                 icon={ <Icon name="map" size={25} color="gray" />} 
                 type="clear" titleStyle={{color:'gray'}}
+                onPress={()=> navigation.navigate('MyMap', {address: item.address})}
+                onLongPress={() => handleRemove(item.id)}
                 />
             </ListItem.Content>
         </ListItem>
     )
 
-    // <Button title="Map" onPress={()=> navigation.navigate('MyMap', {region: region})}/>
     return (
         <View style={styles.screen}>
             <StatusBar hidden={true} />

@@ -1,67 +1,16 @@
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, View, Text, Button } from 'react-native';
-import MapView, { Marker } from 'react-native-maps';
-import {api_key} from '../private/config.js';
+import {StyleSheet, View, Text, } from 'react-native';
 
 
-export default function MyMap({ route }) {
+export default function CheckBox() {
 
-    const { address } = route.params;
-
-    const key = api_key;
-    const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${key}`;
-
-    const [region, setRegion] = useState({
-        latitude: 60.200692,
-        longitude: 24.934302,
-        latitudeDelta: 0.0322,
-        longitudeDelta: 0.0221,
-      })
-
-      const getGeocode = () => {
-     
-        fetch(url)
-          .then(response => response.json())
-          .then(data => {
-            const lat = data.results[0].geometry.location.lat;
-            const lon = data.results[0].geometry.location.lng;
-            setRegion({
-              latitude: lat,
-              longitude: lon,
-              latitudeDelta: 0.0322,
-              longitudeDelta: 0.0121
-            });
-          })
-          .catch((error) => {
-            Alert.alert('Error', error)
-          });
-      }
-
-      useEffect(() => {
-       getGeocode()
-    }, []);
-    
+  
 
     return (
-        <View style={styles.maincontainer}>
+        <View style={styles.screen}>
             <StatusBar hidden={true} />
-            <MapView
-                style={{ flex: 1, height:'100%', width:'100%' }}
-                region={{
-                    latitude: region.latitude,
-                    longitude: region.longitude,
-                    latitudeDelta: 0.0322,
-                    longitudeDelta: 0.0221,
-                }}>
-                <Marker
-                    coordinate={{
-                        latitude: region.latitude,
-                        longitude: region.longitude,
-                    }}
-                   
-                />
-            </MapView>
+  
         </View>
     );
 }

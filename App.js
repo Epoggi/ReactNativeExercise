@@ -17,7 +17,11 @@ import ShoppingElements from './Exercises/ShoppingElements'
 import TestField from './Exercises/TestField'
 import MyPlaces from './Exercises/MyPlaces'
 import MyMap from './Exercises/MyMap'
-
+import CheckBox from './Exercises/CheckBox'
+import CheckBoxE from './Exercises/CheckBoxE'
+import CheckBoxC from './Exercises/CheckBoxC'
+import MultipleTagsTest from './Exercises/MultipleTagsTest'
+import WelcomeComponent from './Exercises/MultipleTags copy'
 export default function App() {
 
 const Stack = createStackNavigator();
@@ -40,6 +44,11 @@ const Stack = createStackNavigator();
        <Stack.Screen name="Calculator" component={Calculator}/>
        <Stack.Screen name="CalculatorHistory" component={CalculatorHistory}/>
        <Stack.Screen name="TestField" component={TestField}/>
+       <Stack.Screen name="MultipleTags" component={MultipleTagsTest}/>
+       <Stack.Screen name="MultipleTagsOld" component={WelcomeComponent}/>
+       <Stack.Screen name="CheckBox" component={CheckBox}/>
+       <Stack.Screen name="CheckBoxE" component={CheckBoxE}/>
+       <Stack.Screen name="CheckBoxC" component={CheckBoxC}/>
      </Stack.Navigator>
    </NavigationContainer>
   );

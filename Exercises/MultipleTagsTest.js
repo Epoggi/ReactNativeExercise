@@ -1,67 +1,95 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useEffect, useState } from 'react';
-import { StyleSheet, View, Text, Button } from 'react-native';
-import MapView, { Marker } from 'react-native-maps';
-import {api_key} from '../private/config.js';
+import React, { useEffect, useState, Component } from 'react';
+import {StyleSheet, View, Text, } from 'react-native';
+import MultipleTags from 'react-native-multiple-tags';
 
+//expo/npm install react-native-multiple-tags
+export default function MultipleTagsTest() {
 
-export default function MyMap({ route }) {
+    const [content, setContent] = useState([]);
+    const [contentx, setContentx] = useState([]);
+  
+const tags = [
+    'cherry',
+    'mango',
+    'cashew',
+    'almond',
+    'guava',
+    'pineapple',
+    'orange',
+    'pear',
+    'date',
+    'strawberry',
+    'pawpaw',
+    'banana',
+    'apple',
+    'grape',
+    'lemon',
+  ];
+  
+  const objectTags = [
+    {
+      key: 'id_01',
+      value: 'cherry',
+    },
+    {
+      key: 'id_02',
+      value: 'mango',
+    },
+    {
+      key: 'id_03',
+      value: 'cashew',
+    },
+    {
+      key: 'id_04',
+      value: 'almond'
+    },
+    {
+      key: 'id_05',
+      value: 'guava'
+    },
+    {
+      key: 'id_06',
+      value: 'pineapple'
+    },
+    {
+      key: 'id_07',
+      value: 'orange'
+    },
+    {
+      key: 'id_08',
+      value: 'pear'
+    },
+    {
+      key: 'id_09',
+      value: 'date'
+    }
+  ]
 
-    const { address } = route.params;
-
-    const key = api_key;
-    const url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address}&key=${key}`;
-
-    const [region, setRegion] = useState({
-        latitude: 60.200692,
-        longitude: 24.934302,
-        latitudeDelta: 0.0322,
-        longitudeDelta: 0.0221,
-      })
-
-      const getGeocode = () => {
-     
-        fetch(url)
-          .then(response => response.json())
-          .then(data => {
-            const lat = data.results[0].geometry.location.lat;
-            const lon = data.results[0].geometry.location.lng;
-            setRegion({
-              latitude: lat,
-              longitude: lon,
-              latitudeDelta: 0.0322,
-              longitudeDelta: 0.0121
-            });
-          })
-          .catch((error) => {
-            Alert.alert('Error', error)
-          });
-      }
-
-      useEffect(() => {
-       getGeocode()
-    }, []);
-    
 
     return (
-        <View style={styles.maincontainer}>
+        <View style={styles.screen}>
             <StatusBar hidden={true} />
-            <MapView
-                style={{ flex: 1, height:'100%', width:'100%' }}
-                region={{
-                    latitude: region.latitude,
-                    longitude: region.longitude,
-                    latitudeDelta: 0.0322,
-                    longitudeDelta: 0.0221,
-                }}>
-                <Marker
-                    coordinate={{
-                        latitude: region.latitude,
-                        longitude: region.longitude,
-                    }}
-                   
-                />
-            </MapView>
+            <View>
+        <MultipleTags
+            tags={objectTags}
+            search
+            onChangeItem={(content) => { setContent({ content }); }}
+            title="Fruits"
+          />
+          {
+          (() => content.map(item => <Text key={item.key}> {item.key}: {item.value} </Text>))()
+          }
+        <MultipleTags
+          tags={tags}
+          search
+          onChangeItem={(contentx) => { setContentx({ contentx }); }}
+          title="Fruits"
+        />
+        {
+        (() => contentx.map(item => <Text key={item}> {item} </Text>) )()
+        }
+      </View>
         </View>
     );
 }
